@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Aether Guild</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #D1D5DB; /* text-gray-300 */
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('https://images.unsplash.com/photo-1552318965-6e6be7484ada?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .accent-color {
+            color: #38bdf8; /* text-sky-400 */
+        }
+        .accent-bg {
+            background-color: #38bdf8; /* bg-sky-400 */
+        }
+        .section-divider {
+            border-bottom: 1px solid #374151; /* border-gray-700 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">The Æther Guild</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="#investigations" class="hover:text-sky-400 transition-colors">Investigations</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-6 hover:bg-gray-800">About</a>
+            <a href="#investigations" class="block py-2 px-6 hover:bg-gray-800">Investigations</a>
+            <a href="#contact" class="block py-2 px-6 hover:bg-gray-800">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white h-screen flex items-center justify-center">
+            <div class="text-center max-w-3xl mx-auto px-4">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Bridging the Gap Between Science and the Supernatural.</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">We apply systematic engineering principles to the study of unexplained phenomena, seeking measurable, verifiable data to understand the unknown.</p>
+                <a href="#investigations" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">Explore Our Investigations</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32 bg-gray-900 section-divider">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-white mb-4">About The Guild</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12">We are engineers, researchers, and explorers dedicated to a new standard of paranormal inquiry.</p>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold text-white mb-4">Our Philosophy: <span class="accent-color">Paranormal Engineering</span></h3>
+                        <p class="mb-4">We treat every investigation as an active experiment. Our goal is not just to capture anomalies, but to understand the systems in which they occur. By controlling variables and prioritizing measurable data, we move beyond anecdote and into analysis.</p>
+                        <p>Intuition can tell you where to look; engineering can tell you what you're looking at. We believe both are essential for true discovery.</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg">
+                        <h4 class="text-2xl font-bold text-white mb-4">Core Values</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><span class="accent-color mr-3">✓</span> <div><strong class="text-white">Rigor:</strong> A "debunk-first" methodology is central to our work.</div></li>
+                            <li class="flex items-start"><span class="accent-color mr-3">✓</span> <div><strong class="text-white">Respect:</strong> For our team, our locations, and the phenomena we investigate.</div></li>
+                            <li class="flex items-start"><span class="accent-color mr-3">✓</span> <div><strong class="text-white">Integrity:</strong> An unwavering commitment to unbiased analysis and honest reporting.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investigations Section -->
+        <section id="investigations" class="py-20 md:py-32 bg-gray-900 section-divider">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-white mb-12">Case Files</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Placeholder Case File 1 -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Case+001" alt="Placeholder image for an investigation" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">The Mill City Ruins</h3>
+                            <p class="mb-4">An investigation into residual energy and auditory phenomena at a historic Minneapolis landmark.</p>
+                            <a href="#" class="font-bold text-sky-400 hover:text-sky-500 transition-colors">Read Full Report →</a>
+                        </div>
+                    </div>
+                    <!-- Placeholder Case File 2 -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Case+002" alt="Placeholder image for an investigation" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">The Wabasha Street Caves</h3>
+                            <p class="mb-4">A deep-dive analysis of EMF fluctuations and thermal anomalies in the historic St. Paul caves.</p>
+                            <a href="#" class="font-bold text-sky-400 hover:text-sky-500 transition-colors">Read Full Report →</a>
+                        </div>
+                    </div>
+                    <!-- Placeholder Case File 3 (Coming Soon) -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden group border-2 border-dashed border-gray-700 flex items-center justify-center">
+                         <div class="p-6 text-center">
+                            <h3 class="text-2xl font-bold text-gray-500 mb-2">New Investigation</h3>
+                            <p class="text-gray-600">Our next case file is currently under analysis. Check back soon for the full report.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-white mb-4">Contact The Guild</h2>
+                <p class="text-lg max-w-2xl mx-auto mb-8">Have a question? Want to report a phenomenon? We are open to inquiries from the public, media, and potential collaborators.</p>
+                <form class="max-w-xl mx-auto text-left">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+                        <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-300 mb-2">Your Email</label>
+                        <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="inquiry" class="block text-gray-300 mb-2">Reason for Inquiry</label>
+                        <select id="inquiry" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                            <option>General Question</option>
+                            <option>Report a Phenomenon</option>
+                            <option>Media Request</option>
+                            <option>Business Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-300 mb-2">Message</label>
+                        <textarea id="message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 The Aether Guild, LLC. All Rights Reserved.</p>
+            <p class="text-sm mt-2">A Minnesota-based Paranormal Research Organization.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
