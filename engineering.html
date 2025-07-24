@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lab | The Aether Guild</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #D1D5DB; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .nav-link { @apply hover:text-sky-400 transition-colors duration-300; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/70 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="guild-logo.png" alt="The Aether Guild Logo" class="h-12 w-12">
+                <span class="text-2xl font-bold text-white tracking-wider hidden sm:block">The Æther Guild</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-lg">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="investigations.html" class="nav-link">Case Files</a>
+                <a href="engineering.html" class="nav-link text-sky-400 font-bold">The Lab</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="about.html" class="block py-3 px-6 text-lg hover:bg-gray-800">About</a>
+            <a href="investigations.html" class="block py-3 px-6 text-lg hover:bg-gray-800">Case Files</a>
+            <a href="engineering.html" class="block py-3 px-6 text-lg bg-gray-800">The Lab</a>
+            <a href="events.html" class="block py-3 px-6 text-lg hover:bg-gray-800">Events</a>
+            <a href="contact.html" class="block py-3 px-6 text-lg hover:bg-gray-800">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">The Engineering Lab</h1>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">Our technical expertise is our greatest asset. We design, build, and deploy our own custom tools to gather data others can't.</p>
+        </div>
+        
+        <div class="space-y-16">
+            <!-- Project 1 -->
+            <div class="bg-gray-800/50 p-8 md:p-12 rounded-lg border border-gray-700">
+                <h2 class="text-3xl font-bold text-white mb-6">Project: The Aether Pod v1.0</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-lg mb-4">The Aether Pod is a networked environmental sensor array designed for continuous data logging. Each pod measures:</p>
+                        <ul class="list-disc list-inside space-y-2 text-lg">
+                            <li>Ambient Temperature</li>
+                            <li>Relative Humidity</li>
+                            <li>Barometric Pressure</li>
+                            <li>Tri-Axis EMF Fluctuations</li>
+                        </ul>
+                        <p class="mt-4 text-lg">This allows us to create a real-time 3D map of an environment's conditions, turning anecdotal feelings of "heavy air" or "cold spots" into measurable data points.</p>
+                    </div>
+                    <div>
+                         <img src="https://placehold.co/600x400/1f2937/38bdf8?text=Aether+Pod+Schematic" alt="Schematic of a sensor pod" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="bg-gray-800/50 p-8 md:p-12 rounded-lg border border-gray-700">
+                <h2 class="text-3xl font-bold text-white mb-6">Project: Full-Spectrum Camera Conversion</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                     <div>
+                         <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Full+Spectrum+Camera" alt="Full spectrum camera" class="rounded-lg shadow-lg">
+                    </div>
+                    <div>
+                        <p class="text-lg mb-4">By removing the internal IR-cut filter from standard DSLR cameras, we enable them to capture light from the near-infrared and near-ultraviolet spectrums, invisible to the human eye.</p>
+                        <p class="text-lg">This technique allows us to capture potential anomalies that exist outside the visible light spectrum, providing a richer, more detailed visual record of our investigations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2025 The Aether Guild, LLC™. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Unless otherwise noted, all text and images on this site are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="hover:text-sky-400 underline" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    </script>
+
+</body>
+</html>
