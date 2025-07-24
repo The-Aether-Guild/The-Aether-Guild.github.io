@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Aether Guild</title>
+    <title>The Aether Guild | Paranormal Engineering & Research</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,44 +13,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
+    <!-- Custom Styles -->
     <style>
-        /* Custom Styles */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #111827; /* bg-gray-900 */
             color: #D1D5DB; /* text-gray-300 */
         }
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('https://images.unsplash.com/photo-1552318965-6e6be7484ada?q=80&w=2070&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 1)), url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
         }
         .accent-color {
             color: #38bdf8; /* text-sky-400 */
         }
-        .accent-bg {
-            background-color: #38bdf8; /* bg-sky-400 */
+        .btn-primary {
+            @apply bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105;
         }
         .section-divider {
-            border-bottom: 1px solid #374151; /* border-gray-700 */
+            border-bottom: 1px solid #1f2937; /* border-gray-800 */
+        }
+        .nav-link {
+            @apply hover:text-sky-400 transition-colors duration-300;
         }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Header & Navigation -->
-    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">The Æther Guild</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
-                <a href="#investigations" class="hover:text-sky-400 transition-colors">Investigations</a>
-                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+    <header class="bg-gray-900/70 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-3">
+                <img src="https://googleusercontent.com/file_content/2" alt="The Aether Guild Logo" class="h-12 w-12">
+                <span class="text-2xl font-bold text-white tracking-wider hidden sm:block">The Æther Guild</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-lg">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#investigations" class="nav-link">Investigations</a>
+                <a href="#engineering" class="nav-link">Engineering</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-white">
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -58,39 +66,47 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-6 hover:bg-gray-800">About</a>
-            <a href="#investigations" class="block py-2 px-6 hover:bg-gray-800">Investigations</a>
-            <a href="#contact" class="block py-2 px-6 hover:bg-gray-800">Contact</a>
+            <a href="#about" class="block py-3 px-6 text-lg hover:bg-gray-800">About</a>
+            <a href="#investigations" class="block py-3 px-6 text-lg hover:bg-gray-800">Investigations</a>
+            <a href="#engineering" class="block py-3 px-6 text-lg hover:bg-gray-800">Engineering</a>
+            <a href="#contact" class="block py-3 px-6 text-lg hover:bg-gray-800">Contact</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero-bg text-white h-screen flex items-center justify-center">
-            <div class="text-center max-w-3xl mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto px-4">
                 <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Bridging the Gap Between Science and the Supernatural.</h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-8">We apply systematic engineering principles to the study of unexplained phenomena, seeking measurable, verifiable data to understand the unknown.</p>
-                <a href="#investigations" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">Explore Our Investigations</a>
+                <div class="my-6">
+                    <p class="text-xl md:text-2xl text-sky-300 italic">"Led by intuition and driven by truth."</p>
+                    <p class="text-md md:text-lg text-sky-500/80 mt-1">Intuitione duce et veritate impulsus</p>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">We apply systematic engineering principles to the study of unexplained phenomena, seeking measurable, verifiable data to understand the unknown.</p>
+                <a href="#about" class="btn-primary text-lg">Discover Our Mission</a>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="py-20 md:py-32 bg-gray-900 section-divider">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center text-white mb-4">About The Guild</h2>
-                <p class="text-center text-lg max-w-3xl mx-auto mb-12">We are engineers, researchers, and explorers dedicated to a new standard of paranormal inquiry.</p>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">A New Standard of Inquiry</h2>
+                    <p class="text-lg text-gray-400 max-w-3xl mx-auto">The Aether Guild is a Twin-Cities-based collective dedicated to exploring the paranormal through a unique lens of scientific rigor and open-minded research.</p>
+                </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
+                    <div class="bg-gray-800/50 p-8 rounded-lg border border-gray-700">
                         <h3 class="text-3xl font-bold text-white mb-4">Our Philosophy: <span class="accent-color">Paranormal Engineering</span></h3>
-                        <p class="mb-4">We treat every investigation as an active experiment. Our goal is not just to capture anomalies, but to understand the systems in which they occur. By controlling variables and prioritizing measurable data, we move beyond anecdote and into analysis.</p>
-                        <p>Intuition can tell you where to look; engineering can tell you what you're looking at. We believe both are essential for true discovery.</p>
+                        <p class="mb-4 text-lg">We treat every investigation as an active experiment. Our goal is not just to capture anomalies, but to understand the systems in which they occur. By controlling variables and prioritizing measurable data, we move beyond anecdote and into analysis.</p>
+                        <p class="text-lg">Intuition can tell you where to look; engineering can tell you what you're looking at. We believe both are essential for true discovery.</p>
                     </div>
-                    <div class="bg-gray-800 p-8 rounded-lg">
-                        <h4 class="text-2xl font-bold text-white mb-4">Core Values</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-start"><span class="accent-color mr-3">✓</span> <div><strong class="text-white">Rigor:</strong> A "debunk-first" methodology is central to our work.</div></li>
-                            <li class="flex items-start"><span class="accent-color mr-3">✓</span> <div><strong class="text-white">Respect:</strong> For our team, our locations, and the phenomena we investigate.</div></li>
-                            <li class="flex items-start"><span class="accent-color mr-3">✓</span> <div><strong class="text-white">Integrity:</strong> An unwavering commitment to unbiased analysis and honest reporting.</div></li>
+                    <div>
+                        <h4 class="text-2xl font-bold text-white mb-6">Our Core Values:</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="accent-color text-2xl mr-4">✓</span> <div class="text-lg"><strong class="text-white">Rigor:</strong> A "debunk-first" methodology is central to our work.</div></li>
+                            <li class="flex items-start"><span class="accent-color text-2xl mr-4">✓</span> <div class="text-lg"><strong class="text-white">Respect:</strong> For our team, our locations, and the phenomena we investigate.</div></li>
+                            <li class="flex items-start"><span class="accent-color text-2xl mr-4">✓</span> <div class="text-lg"><strong class="text-white">Integrity:</strong> An unwavering commitment to unbiased analysis and honest reporting.</div></li>
+                             <li class="flex items-start"><span class="accent-color text-2xl mr-4">✓</span> <div class="text-lg"><strong class="text-white">Curiosity:</strong> Fostering a learning environment where all questions are valid.</div></li>
                         </ul>
                     </div>
                 </div>
@@ -100,32 +116,66 @@
         <!-- Investigations Section -->
         <section id="investigations" class="py-20 md:py-32 bg-gray-900 section-divider">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center text-white mb-12">Case Files</h2>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Case Files</h2>
+                    <p class="text-lg text-gray-400 max-w-3xl mx-auto">A living portfolio of our investigations. Each case is a detailed report of our findings, from debunked claims to truly anomalous events.</p>
+                </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Placeholder Case File 1 -->
-                    <div class="bg-gray-800 rounded-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Case+001" alt="Placeholder image for an investigation" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity">
+                    <!-- Case File 1 -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1549642330-848af5959523?q=80&w=1932&auto=format&fit=crop" alt="Mill City Ruins" class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold text-white mb-2">The Mill City Ruins</h3>
                             <p class="mb-4">An investigation into residual energy and auditory phenomena at a historic Minneapolis landmark.</p>
                             <a href="#" class="font-bold text-sky-400 hover:text-sky-500 transition-colors">Read Full Report →</a>
                         </div>
                     </div>
-                    <!-- Placeholder Case File 2 -->
-                    <div class="bg-gray-800 rounded-lg overflow-hidden group">
-                        <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Case+002" alt="Placeholder image for an investigation" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity">
+                    <!-- Case File 2 -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1618232976729-e3a8a3a3950c?q=80&w=1964&auto=format&fit=crop" alt="Wabasha Street Caves" class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold text-white mb-2">The Wabasha Street Caves</h3>
                             <p class="mb-4">A deep-dive analysis of EMF fluctuations and thermal anomalies in the historic St. Paul caves.</p>
                             <a href="#" class="font-bold text-sky-400 hover:text-sky-500 transition-colors">Read Full Report →</a>
                         </div>
                     </div>
-                    <!-- Placeholder Case File 3 (Coming Soon) -->
-                    <div class="bg-gray-800 rounded-lg overflow-hidden group border-2 border-dashed border-gray-700 flex items-center justify-center">
-                         <div class="p-6 text-center">
+                    <!-- Coming Soon Placeholder -->
+                    <div class="bg-gray-800/30 rounded-lg border-2 border-dashed border-gray-700 flex items-center justify-center p-6 text-center">
+                         <div>
                             <h3 class="text-2xl font-bold text-gray-500 mb-2">New Investigation</h3>
                             <p class="text-gray-600">Our next case file is currently under analysis. Check back soon for the full report.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Engineering Section -->
+        <section id="engineering" class="py-20 md:py-32 bg-gray-900 section-divider">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">The Engineering Lab</h2>
+                    <p class="text-lg text-gray-400 max-w-3xl mx-auto">Our technical expertise is our greatest asset. We design, build, and deploy our own custom tools to gather data others can't.</p>
+                </div>
+                <div class="bg-gray-800/50 p-8 md:p-12 rounded-lg border border-gray-700">
+                    <h3 class="text-3xl font-bold text-white mb-6">Featured Project: The Aether Pod v1.0</h3>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <p class="text-lg mb-4">The Aether Pod is a networked environmental sensor array designed for continuous data logging. Each pod measures:</p>
+                            <ul class="list-disc list-inside space-y-2 text-lg">
+                                <li>Ambient Temperature</li>
+                                <li>Relative Humidity</li>
+                                <li>Barometric Pressure</li>
+                                <li>Tri-Axis EMF Fluctuations</li>
+                            </ul>
+                            <p class="mt-4 text-lg">This allows us to create a real-time 3D map of an environment's conditions, turning anecdotal feelings of "heavy air" or "cold spots" into measurable data points.</p>
+                        </div>
+                        <div>
+                             <img src="https://placehold.co/600x400/1f2937/38bdf8?text=Aether+Pod+Schematic" alt="Schematic of a sensor pod" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <a href="#" class="font-bold text-sky-400 hover:text-sky-500 transition-colors text-lg">Explore More Engineering Projects →</a>
                     </div>
                 </div>
             </div>
@@ -134,20 +184,20 @@
         <!-- Contact Section -->
         <section id="contact" class="py-20 md:py-32 bg-gray-900">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-white mb-4">Contact The Guild</h2>
-                <p class="text-lg max-w-2xl mx-auto mb-8">Have a question? Want to report a phenomenon? We are open to inquiries from the public, media, and potential collaborators.</p>
-                <form class="max-w-xl mx-auto text-left">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Contact The Guild</h2>
+                <p class="text-lg max-w-2xl mx-auto mb-12">Have a question? Want to report a phenomenon? We are open to inquiries from the public, media, and potential collaborators.</p>
+                <form class="max-w-xl mx-auto text-left" onsubmit="event.preventDefault(); alert('Thank you for your message!');">
                     <div class="mb-4">
                         <label for="name" class="block text-gray-300 mb-2">Your Name</label>
-                        <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300" required>
                     </div>
                     <div class="mb-4">
                         <label for="email" class="block text-gray-300 mb-2">Your Email</label>
-                        <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        <input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300" required>
                     </div>
                     <div class="mb-4">
                         <label for="inquiry" class="block text-gray-300 mb-2">Reason for Inquiry</label>
-                        <select id="inquiry" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        <select id="inquiry" name="inquiry" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300">
                             <option>General Question</option>
                             <option>Report a Phenomenon</option>
                             <option>Media Request</option>
@@ -156,10 +206,10 @@
                     </div>
                     <div class="mb-6">
                         <label for="message" class="block text-gray-300 mb-2">Message</label>
-                        <textarea id="message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                        <textarea id="message" name="message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300" required></textarea>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">Send Message</button>
+                        <button type="submit" class="btn-primary text-lg w-full md:w-auto">Send Message</button>
                     </div>
                 </form>
             </div>
@@ -169,8 +219,8 @@
     <!-- Footer -->
     <footer class="bg-gray-900 border-t border-gray-800">
         <div class="container mx-auto px-6 py-8 text-center text-gray-500">
-            <p>&copy; 2025 The Aether Guild, LLC. All Rights Reserved.</p>
-            <p class="text-sm mt-2">A Minnesota-based Paranormal Research Organization.</p>
+            <p>&copy; 2025 The Aether Guild, LLC™. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Unless otherwise noted, all text and images on this site are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="hover:text-sky-400 underline" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
         </div>
     </footer>
 
@@ -182,6 +232,14 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
     </script>
 
 </body>
