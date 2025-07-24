@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    <!-- Netlify Identity Widget Script (Handles Login & Invites) -->
+    <!-- Netlify Identity Widget Script -->
     <script src="https://unpkg.com/netlify-identity-widget@^1.0.0/dist/netlify-identity-widget.js"></script>
 
     <style>
@@ -107,11 +107,12 @@
     </footer>
 
     <script>
+        // --- Mobile menu toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Netlify Identity Widget Initialization
+        // --- Netlify Identity Widget Initialization ---
         // This script will handle the invite token from the URL
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
@@ -121,6 +122,8 @@
                     });
                 }
             });
+            // Initialize the widget
+            window.netlifyIdentity.init();
         }
     </script>
 
