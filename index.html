@@ -48,13 +48,14 @@
     <!-- Header & Navigation -->
     <header class="bg-gray-900/70 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-800">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#home" class="flex items-center space-x-3">
+            <a href="index.html" class="flex items-center space-x-3">
                 <img src="https://googleusercontent.com/file_content/2" alt="The Aether Guild Logo" class="h-12 w-12">
                 <span class="text-2xl font-bold text-white tracking-wider hidden sm:block">The Æther Guild</span>
             </a>
             <div class="hidden md:flex items-center space-x-8 text-lg">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#investigations" class="nav-link">Investigations</a>
+                <a href="map.html" class="nav-link">Map</a>
                 <a href="#engineering" class="nav-link">Engineering</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -68,6 +69,7 @@
         <div id="mobile-menu" class="hidden md:hidden">
             <a href="#about" class="block py-3 px-6 text-lg hover:bg-gray-800">About</a>
             <a href="#investigations" class="block py-3 px-6 text-lg hover:bg-gray-800">Investigations</a>
+            <a href="map.html" class="block py-3 px-6 text-lg hover:bg-gray-800">Map</a>
             <a href="#engineering" class="block py-3 px-6 text-lg hover:bg-gray-800">Engineering</a>
             <a href="#contact" class="block py-3 px-6 text-lg hover:bg-gray-800">Contact</a>
         </div>
@@ -225,7 +227,7 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // --- Mobile menu toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -233,7 +235,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
         const mobileLinks = mobileMenu.getElementsByTagName('a');
         for (let link of mobileLinks) {
             link.addEventListener('click', () => {
