@@ -112,18 +112,23 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // --- Netlify Identity Widget Initialization ---
+        // --- Netlify Identity Widget Initialization (Robust Version) ---
         // This script will handle the invite token from the URL
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
+                    // If no one is logged in, and the URL has an invite token, open the login modal
+                    if (window.location.hash.includes("#invite_token=")) {
+                        // We need to give the UI a moment to load before opening the modal
+                        setTimeout(() => {
+                           window.netlifyIdentity.open();
+                        }, 500);
+                    }
                     window.netlifyIdentity.on("login", () => {
                         document.location.href = "/admin/";
                     });
                 }
             });
-            // Initialize the widget
-            window.netlifyIdentity.init();
         }
     </script>
 
