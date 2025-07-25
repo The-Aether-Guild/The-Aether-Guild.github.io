@@ -62,9 +62,10 @@
 
     <script>
         const { createClient } = supabase;
-        // --- IMPORTANT: PASTE YOUR SUPABASE URL AND KEY HERE ---
-        const supabaseUrl = 'YOUR_SUPABASE_URL';
-        const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
+        
+        // --- Supabase credentials have been added ---
+        const supabaseUrl = 'https://afzpelmkdszeuejimwys.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmenBlbG1rZHN6ZXVlamltd3lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MDc3NDEsImV4cCI6MjA2ODk4Mzc0MX0.OCMbJfopCSeQTX6xxMlAvZ9PlYGGXOg0kgFIbactrhc';
         const sb = createClient(supabaseUrl, supabaseKey);
 
         const loginForm = document.getElementById('login-form');
