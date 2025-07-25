@@ -4,10 +4,120 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager | The Aether Guild</title>
-  
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- Supabase JS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <!-- Decap CMS Script -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // --- Supabase credentials ---
+    const supabaseUrl = 'https://afzpelmkdszeuejimwys.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmenBlbG1rZHN6ZXVlamltd3lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MDc3NDEsImV4cCI6MjA2ODk4Mzc0MX0.OCMbJfopCSeQTX6xxMlAvZ9PlYGGXOg0kgFIbactrhc';
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // --- Custom Supabase Backend for Decap CMS ---
+    class SupabaseBackend {
+      constructor(config) {
+        this.config = config;
+        this.auth = supabase.auth;
+
+        this.auth.onAuthStateChange((event, session) => {
+          if (event === 'SIGNED_IN') {
+            window.location.reload();
+          }
+        });
+      }
+
+      async status() {
+        const { data: { session } } = await this.auth.getSession();
+        return {
+          auth_status: !!session,
+          status: true,
+        };
+      }
+
+      authComponent() {
+        return (props) => props.children({
+          onLogin: (credentials) => {
+            this.auth.signInWithOAuth({
+              provider: 'github',
+              options: { scopes: 'repo' },
+            });
+          },
+        });
+      }
+
+      async authenticate(credentials) {
+        // This is handled by the onAuthStateChange listener
+      }
+
+      async logout() {
+        await this.auth.signOut();
+      }
+
+      async getToken() {
+        const { data: { session } } = await this.auth.getSession();
+        return session?.provider_token;
+      }
+    }
+
+    // --- Register the custom backend ---
+    CMS.registerBackend('supabase', SupabaseBackend);
+
+    // --- Initialize Decap CMS with the new backend ---
+    CMS.init({
+      config: {
+        backend: {
+          name: 'supabase',
+          repo: 'the-aether-guild/the-aether-guild.github.io',
+          branch: 'main',
+        },
+        media_folder: 'assets/images',
+        public_folder: '/assets/images',
+        collections: [
+          {
+            name: 'investigations',
+            label: 'Case Files',
+            folder: '_investigations',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              { label: 'Case Number', name: 'case_number', widget: 'string' },
+              { label: 'Title', name: 'title', widget: 'string' },
+              { label: 'Featured Image', name: 'image', widget: 'image' },
+              { label: 'Short Description', name: 'description', widget: 'text' },
+              { label: 'Full Report', name: 'body', widget: 'markdown' },
+            ],
+          },
+          {
+            name: 'engineering',
+            label: 'Engineering Projects',
+            folder: '_engineering',
+            create: true,
+            slug: '{{slug}}',
+            fields: [
+              { label: 'Project Title', name: 'title', widget: 'string' },
+              { label: 'Project Image/Schematic', name: 'image', widget: 'image' },
+              { label: 'Full Description', name: 'body', widget: 'markdown' },
+            ],
+          },
+          {
+            name: 'events',
+            label: 'Events',
+            folder: '_events',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              { label: 'Event Title', name: 'title', widget: 'string' },
+              { label: 'Event Date', name: 'date', widget: 'datetime' },
+              { label: 'Location / Platform', name: 'location', widget: 'string' },
+              { label: 'Short Description', name: 'description', widget: 'text' },
+              { label: 'Registration Link', name: 'link', widget: 'string' },
+            ],
+          },
+        ],
+      },
+    });
+  </script>
 </body>
 </html>
