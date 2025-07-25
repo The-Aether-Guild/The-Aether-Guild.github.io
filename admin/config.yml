@@ -1,14 +1,17 @@
-# The backend specifies how to connect to your repository and authentication.
+# The backend specifies how to connect to your repository.
 backend:
   name: github
   repo: the-aether-guild/the-aether-guild.github.io # Your GitHub username/repo name
   branch: main
   auth_type: pkce
-  app_id: your-github-oauth-app-client-id # You will need to create a GitHub OAuth App for this
+  app_id: Ov23liDwp8GgclWkTkLD # Your GitHub OAuth App Client ID
 
 # The media_folder is where all uploaded images will be stored.
 media_folder: "assets/images"
 public_folder: "/assets/images"
+
+# This new line tells the CMS to use your auth.html page for the login button
+auth_endpoint: auth.html
 
 # Collections are the different types of content you can edit.
 collections:
