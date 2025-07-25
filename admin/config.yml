@@ -1,0 +1,44 @@
+# This backend uses Netlify's Git Gateway for authentication
+backend:
+  name: git-gateway
+  branch: main # The branch to publish changes to
+
+# The media_folder is where all uploaded images will be stored.
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# Collections are the different types of content you can edit.
+collections:
+  - name: "investigations"
+    label: "Case Files"
+    folder: "_investigations"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Case Number", name: "case_number", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Full Report", name: "body", widget: "markdown" }
+
+  - name: "engineering"
+    label: "Engineering Projects"
+    folder: "_engineering"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Project Image/Schematic", name: "image", widget: "image" }
+      - { label: "Full Description", name: "body", widget: "markdown" }
+
+  - name: "events"
+    label: "Events"
+    folder: "_events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Event Title", name: "title", widget: "string" }
+      - { label: "Event Date", name: "date", widget: "datetime" }
+      - { label: "Location / Platform", name: "location", widget: "string" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Registration Link", name: "link", widget: "string" }
