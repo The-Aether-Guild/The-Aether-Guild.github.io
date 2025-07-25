@@ -10,16 +10,17 @@
 </head>
 <body>
   <script>
-    // --- Supabase credentials ---
+    // --- Initialize Supabase Client FIRST ---
     const supabaseUrl = 'https://afzpelmkdszeuejimwys.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmenBlbG1rZHN6ZXVlamltd3lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MDc3NDEsImV4cCI6MjA2ODk4Mzc0MX0.OCMbJfopCSeQTX6xxMlAvZ9PlYGGXOg0kgFIbactrhc';
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    const sb = supabase.createClient(supabaseUrl, supabaseKey);
 
     // --- Custom Supabase Backend for Decap CMS ---
     class SupabaseBackend {
       constructor(config) {
         this.config = config;
-        this.auth = supabase.auth;
+        // Now we can safely reference the initialized supabase client 'sb'
+        this.auth = sb.auth;
 
         this.auth.onAuthStateChange((event, session) => {
           if (event === 'SIGNED_IN') {
